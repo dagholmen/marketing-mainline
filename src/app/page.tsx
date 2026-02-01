@@ -1,8 +1,6 @@
 import { ApiSection } from "@/components/blocks/apis-block";
-import { FAQ } from "@/components/blocks/faq";
 import { Hero } from "@/components/blocks/hero";
 import { PatternSeparator } from "@/components/blocks/pattern-separator";
-import { Pricing } from "@/components/blocks/pricing";
 
 export default function Home() {
   return (

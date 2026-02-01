@@ -1,6 +1,5 @@
-import { cn } from "@/lib/utils";
-
 import { StripedPattern } from "@/components/ui/striped-pattern";
+import { cn } from "@/lib/utils";
 
 type PatternSeparatorProps = {
   className?: string;

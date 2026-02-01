@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function FooterPricing() {
   return (
-    <section className="bg-secondary-foreground py-16 md:py-24">
+    <section id="pricing" className="bg-secondary-foreground py-16 md:py-24">
       <div className="container">
         <h2 className="text-primary-foreground mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
           Start free. Scale confidently.

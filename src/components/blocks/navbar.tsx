@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
 
 const ITEMS = [
   { label: "Docs", href: "https://docs.b2benrich.com" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Pricing", href: "#pricing" },
   {
     label: "Endpoints",
     href: "#endpoints",

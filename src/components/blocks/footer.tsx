@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 import { ArrowUpRight } from "lucide-react";
@@ -6,8 +5,6 @@ import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
-  const legal = [{ name: "Privacy Policy", href: "/privacy" }];
-
   return (
     <footer className="bg-secondary-foreground flex flex-col items-center gap-14">
       <div className="container space-y-3 text-center">
