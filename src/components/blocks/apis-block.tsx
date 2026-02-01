@@ -1,16 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+
+import Image from "next/image";
+
 import { Check, Copy } from "lucide-react";
 
+import { DashedLine } from "@/components/dashed-line";
+import { Button } from "@/components/ui/button";
 import {
   CodeBlock,
   CodeBlockCode,
   CodeBlockGroup,
 } from "@/components/ui/code-block";
-import { Button } from "@/components/ui/button";
-import { DashedLine } from "@/components/dashed-line";
 
 const API_ENDPOINTS = [
   {
