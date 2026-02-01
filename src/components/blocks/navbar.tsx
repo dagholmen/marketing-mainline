@@ -21,27 +21,30 @@ import {
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
+  { label: "Docs", href: "/docs" },
+  { label: "Pricing", href: "/pricing" },
   {
-    label: "Features",
-    href: "#features",
+    label: "Endpoints",
+    href: "#endpoints",
     dropdownItems: [
       {
-        title: "Modern product teams",
-        href: "/#feature-modern-teams",
+        title: "Person",
+        href: "/#person-endpoints",
         description:
           "Mainline is built on the habits that make the best product teams successful",
       },
       {
-        title: "Resource Allocation",
-        href: "/#resource-allocation",
+        title: "Company",
+        href: "/#company-endpoints",
+        description: "Mainline your resource allocation and execution",
+      },
+      {
+        title: "Prospector",
+        href: "/#prospector-endpoints",
         description: "Mainline your resource allocation and execution",
       },
     ],
   },
-  { label: "About Us", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export const Navbar = () => {
@@ -52,108 +55,113 @@ export const Navbar = () => {
   return (
     <section
       className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
-        "top-5 lg:top-12",
+        "bg-background/70 sticky top-0 z-50 w-full border-b backdrop-blur-md transition-all duration-300",
       )}
     >
-      <div className="flex items-center justify-between px-6 py-3">
-        <Link href="/" className="flex shrink-0 items-center gap-2">
-          <Image
-            src="/logo.svg"
-            alt="logo"
-            width={94}
-            height={18}
-            className="dark:invert"
-          />
-        </Link>
-
-        {/* Desktop Navigation */}
-        <NavigationMenu className="max-lg:hidden">
-          <NavigationMenuList>
-            {ITEMS.map((link) =>
-              link.dropdownItems ? (
-                <NavigationMenuItem key={link.label} className="">
-                  <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5">
-                    {link.label}
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="w-[400px] space-y-2 p-4">
-                      {link.dropdownItems.map((item) => (
-                        <li key={item.title}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              href={item.href}
-                              className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none"
-                            >
-                              <div className="space-y-1.5 transition-transform duration-300 group-hover:translate-x-1">
-                                <div className="text-sm leading-none font-medium">
-                                  {item.title}
-                                </div>
-                                <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              ) : (
-                <NavigationMenuItem key={link.label} className="">
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
-                      pathname === link.href && "text-muted-foreground",
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                </NavigationMenuItem>
-              ),
-            )}
-          </NavigationMenuList>
-        </NavigationMenu>
-
-        {/* Auth Buttons */}
-        <div className="flex items-center gap-2.5">
-          <ThemeToggle />
-          <Link href="/login" className="max-lg:hidden">
-            <Button variant="outline">
-              <span className="relative z-10">Login</span>
-            </Button>
+      <div className="mx-4 md:mx-8 lg:mx-12 xl:mx-16">
+        <div className="flex items-center justify-between py-3">
+          <Link href="/" className="flex shrink-0 items-center gap-2">
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              width={94}
+              height={18}
+              className="dark:invert"
+            />
           </Link>
-          <a
-            href="https://github.com/shadcnblocks/mainline-nextjs-template"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Github className="size-4" />
-            <span className="sr-only">GitHub</span>
-          </a>
 
-          {/* Hamburger Menu Button (Mobile Only) */}
-          <button
-            className="text-muted-foreground relative flex size-8 lg:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "rotate-45" : "-translate-y-1.5"}`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "opacity-0" : ""}`}
-              ></span>
-              <span
-                aria-hidden="true"
-                className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "-rotate-45" : "translate-y-1.5"}`}
-              ></span>
-            </div>
-          </button>
+          {/* Desktop Navigation */}
+          <NavigationMenu className="max-lg:hidden">
+            <NavigationMenuList>
+              {ITEMS.map((link) =>
+                link.dropdownItems ? (
+                  <NavigationMenuItem key={link.label} className="">
+                    <NavigationMenuTrigger className="data-[state=open]:bg-accent/50 bg-transparent! px-1.5">
+                      {link.label}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="w-[400px] space-y-2 p-4">
+                        {link.dropdownItems.map((item) => (
+                          <li key={item.title}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                href={item.href}
+                                className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none"
+                              >
+                                <div className="space-y-1.5 transition-transform duration-300 group-hover:translate-x-1">
+                                  <div className="text-sm leading-none font-medium">
+                                    {item.title}
+                                  </div>
+                                  <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                ) : (
+                  <NavigationMenuItem key={link.label} className="">
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
+                        pathname === link.href && "text-muted-foreground",
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </NavigationMenuItem>
+                ),
+              )}
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* Auth Buttons */}
+          <div className="flex items-center gap-2.5">
+            <ThemeToggle />
+            <Link
+              href="https://app.b2benrich.com/auth/sign-up"
+              className="max-lg:hidden"
+            >
+              <Button variant="default">
+                <span className="relative z-10">Signup</span>
+              </Button>
+            </Link>
+            <Link
+              href="https://app.b2benrich.com/auth/sign-in"
+              className="max-lg:hidden"
+            >
+              <Button variant="outline">
+                <span className="relative z-10">Login</span>
+              </Button>
+            </Link>
+
+            {/* Hamburger Menu Button (Mobile Only) */}
+            <button
+              className="text-muted-foreground relative flex size-8 lg:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
+                <span
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "rotate-45" : "-translate-y-1.5"}`}
+                ></span>
+                <span
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "opacity-0" : ""}`}
+                ></span>
+                <span
+                  aria-hidden="true"
+                  className={`absolute block h-0.5 w-full rounded-full bg-current transition duration-500 ease-in-out ${isMenuOpen ? "-rotate-45" : "translate-y-1.5"}`}
+                ></span>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
 

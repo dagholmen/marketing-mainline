@@ -63,11 +63,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mainline - Modern Next.js Template",
-    template: "%s | Mainline",
+    default: "B2BEnrich",
+    template: "%s | B2BEnrich",
   },
   description:
-    "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+    "Accurate and fast B2B data enrichment platform to enhance your business data quality and insights.",
   keywords: [
     "Next.js",
     "nextjs template",
@@ -83,9 +83,9 @@ export const metadata: Metadata = {
     "mdx theme",
     "mdx starter",
   ],
-  authors: [{ name: "shadcnblocks.com" }],
-  creator: "shadcnblocks.com",
-  publisher: "shadcnblocks.com",
+  authors: [{ name: "B2BEnrich" }],
+  creator: "B2BEnrich",
+  publisher: "B2BEnrich",
   robots: {
     index: true,
     follow: true,
@@ -102,26 +102,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Mainline - Modern Next.js Template",
+    title: "B2BEnrich",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
-    siteName: "Mainline",
+      "Accurate and fast B2B data enrichment platform to enhance your business data quality and insights.",
+    siteName: "B2BEnrich",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mainline - Modern Next.js Template",
+        alt: "B2BEnrich - Accurate and fast B2B data enrichment platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mainline - Modern Next.js Template",
+    title: "B2BEnrich",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+      "Accurate and fast B2B data enrichment platform to enhance your business data quality and insights.",
     images: ["/og-image.jpg"],
-    creator: "@ausrobdev",
+    creator: "@b2benrich",
   },
 };
 
@@ -148,8 +148,12 @@ export default function RootLayout({
         >
           <StyleGlideProvider />
           <Navbar />
-          <main className="">{children}</main>
-          <Footer />
+          <div className="mx-4 md:mx-8 lg:mx-12 xl:mx-16">
+            <div className="border-border border-x px-4 md:px-8 lg:px-12">
+              <main className="">{children}</main>
+              <Footer />
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
