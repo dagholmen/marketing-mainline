@@ -23,7 +23,7 @@ import { cn } from "@/lib/utils";
 const ITEMS = [
   { label: "Docs", href: "https://docs.b2benrich.com" },
   { label: "Pricing", href: "#pricing" },
-  {
+  /*{
     label: "Endpoints",
     href: "#endpoints",
     dropdownItems: [
@@ -44,7 +44,7 @@ const ITEMS = [
         description: "Mainline your resource allocation and execution",
       },
     ],
-  },
+  },*/
 ];
 
 export const Navbar = () => {
