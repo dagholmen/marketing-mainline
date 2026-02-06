@@ -1,13 +1,14 @@
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { HeroIllustration } from "@/components/blocks/hero-illustration";
 
 export const Hero = () => {
   return (
-    <section className="py-28 lg:py-32 lg:pt-35">
+    <section className="py-28 lg:py-32 lg:pt-35 overflow-hidden">
       <div className="container flex flex-col items-center justify-center gap-8 text-center">
         {/* Main content */}
-        <div className="max-w-3xl">
+        <div className="max-w-3xl z-10 relative">
           <h1 className="text-foreground text-3xl tracking-tight md:text-4xl lg:text-5xl">
             B2B Data Enrichment
           </h1>
@@ -37,17 +38,11 @@ export const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <div className="container mt-0">
+         <HeroIllustration />
+      </div>
 
-      {/*<div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
-        <div className="relative h-[793px] w-full">
-          <Image
-            src="/hero.webp"
-            alt="hero"
-            fill
-            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
-          />
-        </div>
-      </div>*/}
     </section>
   );
 };
