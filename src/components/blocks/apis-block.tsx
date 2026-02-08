@@ -241,6 +241,46 @@ response = requests.post(
 )`,
         },
       },
+      {
+        method: "POST",
+        path: "/v1/enrich/cached/person/phone-to-linkedin",
+        title: "Phone to LinkedIn",
+        description: "Get LinkedIn profile URLs from a phone number.",
+        code: {
+          curl: `curl -X POST https://api.b2benrich.com/v1/enrich/cached/person/phone-to-linkedin \\
+  -H "X-Api-Key: your_api_key_here" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "input": "+1-555-123-4567"
+  }'`,
+          node: `const axios = require('axios');
+
+const response = await axios.post(
+  'https://api.b2benrich.com/v1/enrich/cached/person/phone-to-linkedin',
+  {
+    input: "+1-555-123-4567"
+  },
+  {
+    headers: {
+      'X-Api-Key': 'your_api_key_here',
+      'Content-Type': 'application/json'
+    }
+  }
+);`,
+          python: `import requests
+
+response = requests.post(
+    'https://api.b2benrich.com/v1/enrich/cached/person/phone-to-linkedin',
+    headers={
+        'X-Api-Key': 'your_api_key_here',
+        'Content-Type': 'application/json'
+    },
+    json={
+        'input': '+1-555-123-4567'
+    }
+)`,
+        },
+      },
     ],
   },
 ];
@@ -322,10 +362,10 @@ export function ApiSection() {
       <div className="container">
         <div className="mb-12 flex items-start justify-between">
           <div className="text-start">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+            <h2>
               API Documentation
             </h2>
-            <p className="text-muted-foreground mt-4 text-lg">
+            <p className="text-muted-foreground mt-4">
               Integrate B2B data enrichment into your applications
             </p>
           </div>
@@ -363,14 +403,14 @@ export function ApiSection() {
               {categoryIndex > 0 && (
                 <DashedLine orientation="horizontal" className="mb-16" />
               )}
-              <h3 className="mb-8 text-2xl font-bold">{category.category}</h3>
+              <h3 className="mb-8">{category.category}</h3>
               <div className="space-y-12">
                 {category.endpoints.map((endpoint) => (
                   <div key={endpoint.path}>
                     <div className="flex items-center justify-between gap-8">
                       {/* Left - Title and URL */}
                       <div className="max-w-md flex-1">
-                        <h4 className="mb-2 text-xl font-semibold">
+                        <h4 className="mb-2">
                           {endpoint.title}
                         </h4>
                         <p className="text-muted-foreground mb-4 text-sm">
