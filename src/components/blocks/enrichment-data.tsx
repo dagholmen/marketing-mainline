@@ -18,7 +18,7 @@ const items = [
 
 export const EnrichmentData = () => {
   return (
-    <section className="pb-20 lg:pb-32">
+    <section className="py-0">
       <div className="container text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-foreground">
           Enrich Data for Your

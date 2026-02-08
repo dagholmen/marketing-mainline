@@ -1,5 +1,6 @@
 import { ApiSection } from "@/components/blocks/apis-block";
 import { EnrichmentData } from "@/components/blocks/enrichment-data";
+import { FooterPricing } from "@/components/blocks/footer-pricing";
 import { Hero } from "@/components/blocks/hero";
 import { PatternSeparator } from "@/components/blocks/pattern-separator";
 
@@ -14,9 +15,11 @@ export default function Home() {
         <EnrichmentData />
       </div>
 
-      <div className="px-0 md:px-8 lg:px-12">
+      <div className="px-0">
         <ApiSection />
       </div>
+
+      <FooterPricing />
     </>
   );
 }
