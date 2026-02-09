@@ -153,7 +153,7 @@ export default function RootLayout({
               <main className="">{children}</main>
             </div>
           </div>
-          <div className="bg-white dark:bg-black">
+          <div className="bg-background">
             <div className="mx-2 md:mx-8 lg:mx-12 xl:mx-16">
               <div className="border-border/20 border-x">
                 <Footer />

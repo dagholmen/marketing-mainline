@@ -71,7 +71,7 @@ export const FAQ = ({
   className2?: string;
 }) => {
   return (
-    <section className={cn("py-16 lg:py-32", className)}>
+    <section className={cn("py-16 lg:pt-32 lg:pb-16", className)}>
       <div className="container max-w-5xl">
         <div className={cn("mx-auto grid gap-16 lg:grid-cols-2", className2)}>
           <div className="space-y-4">
