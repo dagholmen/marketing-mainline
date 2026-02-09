@@ -1,5 +1,4 @@
 import { ApiSection } from "@/components/blocks/apis-block";
-import { DataSecurity } from "@/components/blocks/data-security";
 import { EnrichmentData } from "@/components/blocks/enrichment-data";
 import { FooterPricing } from "@/components/blocks/footer-pricing";
 import { Hero } from "@/components/blocks/hero";
@@ -20,8 +19,6 @@ export default function Home() {
       <div className="px-0">
         <ApiSection />
       </div>
-
-      <DataSecurity />
 
       <FooterPricing />
 

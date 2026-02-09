@@ -25,11 +25,11 @@ export const EnrichmentData = () => {
         </h2>
       </div>
 
-      <div className="relative flex flex-col gap-6 overflow-hidden">
+      <div className="relative flex flex-col gap-3 overflow-hidden">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-background z-20"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-background z-20"></div>
 
-        <Marquee pauseOnHover autoFill className="[--duration:20s]">
+        <Marquee pauseOnHover autoFill className="[--duration:20s] py-2">
           {items.map((item, i) => (
             <div
               key={i}
@@ -44,7 +44,7 @@ export const EnrichmentData = () => {
           pauseOnHover
           autoFill
           direction="right"
-          className="[--duration:20s]"
+          className="[--duration:20s] py-2"
         >
           {items.map((item, i) => (
             <div

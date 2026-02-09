@@ -30,7 +30,7 @@ export function HowCreditsWork() {
     <section className="pb-16 md:pb-24">
       <div className="container">
         <div className="mb-12 text-center md:text-left">
-          <h2 className="mb-4">How Credits Work</h2>
+          <h3 className="mb-4 text-xl md:text-2xl font-semibold tracking-tight text-foreground">How Credits Work</h3>
           <p className="text-muted-foreground max-w-2xl">
             Use your credits however you like. Need more? You can renew your subscription early or switch to a higher-volume plan with a lower price per credit.
           </p>

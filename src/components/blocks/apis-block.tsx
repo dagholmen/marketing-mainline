@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ArrowRight, Terminal, Globe, Shield, Zap, Search, Copy } from "lucide-react";
+import { Check, ArrowRight, Terminal, Globe, Shield, Zap, Search, Copy, Fingerprint, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeBlock, CodeBlockCode, CodeBlockGroup } from "@/components/ui/code-block";
@@ -123,14 +123,14 @@ export function ApiSection() {
   };
 
   return (
-    <section className="py-20 lg:py-24 bg-background">
+    <section className="pt-20 lg:pt-24 bg-background">
       <div className="container">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="text-start max-w-2xl">
-            <h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
               Developer-First API
             </h2>
-            <p className="text-muted-foreground mt-4 text-lg">
+            <p className="text-muted-foreground mt-4 text-lg text-balance">
               Integrate enterprise-grade B2B enrichment into your stack with a few lines of code.
             </p>
           </div>
@@ -293,38 +293,29 @@ export function ApiSection() {
           </div>
 
           {/* Right Column: Code Blocks */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-4">
             {/* Request Code Block */}
-            <div className="w-full">
-              <CodeBlock className="shadow-lg">
-                <CodeBlockGroup className="border-border border-b py-2 pr-2 pl-4">
-                  <div className="flex items-center gap-2">
-                    <div className="bg-primary/10 text-primary rounded px-2 py-1 text-xs font-medium">
-                      POST
-                    </div>
-                    <span className="text-muted-foreground truncate text-sm">
-                      {activeTab === "person" 
-                        ? "/v1/enrich/cached/person/linkedin-to-person"
-                        : activeTab === "company"
-                          ? "/v1/enrich/cached/org/domain-to-org"
-                          : "/v1/prospector/search"
-                      }
-                    </span>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8"
-                    onClick={handleCopyRequest}
-                  >
-                    {copiedRequest ? (
-                      <Check className="h-4 w-4 text-green-500" />
-                    ) : (
-                      <Copy className="h-4 w-4" />
-                    )}
-                  </Button>
-                </CodeBlockGroup>
-                <div className="max-h-[300px] overflow-y-auto bg-white dark:bg-background">
+            <div className="rounded-xl border bg-card shadow-sm overflow-hidden">
+              {/* Header */}
+              <div className="flex items-center justify-between gap-2 px-4 py-2 border-b bg-card">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-sky-600/10 text-sky-600 dark:bg-sky-600/20">
+                    POST
+                  </span>
+                  <span className="text-xs text-muted-foreground truncate font-mono">
+                    {activeTab === "person" 
+                      ? "/v1/enrich/cached/person/linkedin-to-person"
+                      : activeTab === "company"
+                        ? "/v1/enrich/cached/org/domain-to-org"
+                        : "/v1/prospector/search"
+                    }
+                  </span>
+                </div>
+              </div>
+              
+              {/* Code Content */}
+              <div className="relative group">
+                <div className="overflow-auto max-h-[240px] bg-background">
                   <CodeBlockCode 
                     code={
                       activeTab === "person" 
@@ -335,38 +326,42 @@ export function ApiSection() {
                     }
                     language="bash"
                     theme={resolvedTheme === "dark" ? "github-dark" : "github-light"}
-                    className="p-4 text-xs lg:text-sm bg-transparent"
+                    className="text-xs"
                   />
                 </div>
-              </CodeBlock>
+                <span className="absolute top-2 right-3 text-[11px] font-mono text-muted-foreground/60 transition-opacity group-hover:opacity-0 pointer-events-none">
+                  shell
+                </span>
+                <button
+                  onClick={handleCopyRequest}
+                  className="absolute top-2 right-2 size-7 p-1.5 opacity-0 group-hover:opacity-100 inline-flex items-center justify-center rounded-md border bg-background shadow-sm hover:bg-accent transition-all"
+                >
+                  {copiedRequest ? (
+                    <Check className="size-3.5 text-green-600" />
+                  ) : (
+                    <Copy className="size-3.5" />
+                  )}
+                </button>
+              </div>
             </div>
 
             {/* Response Code Block */}
-            <div className="w-full">
-              <CodeBlock className="shadow-lg">
-                <CodeBlockGroup className="border-border border-b py-2 pr-2 pl-4">
-                  <div className="flex items-center gap-2">
-                    <div className="bg-green-500/10 text-green-600 dark:text-green-400 rounded px-2 py-1 text-xs font-medium">
-                      200 OK
-                    </div>
-                    <span className="text-muted-foreground truncate text-sm">
-                      Example Response
-                    </span>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8"
-                    onClick={handleCopyResponse}
-                  >
-                    {copiedResponse ? (
-                      <Check className="h-4 w-4 text-green-500" />
-                    ) : (
-                      <Copy className="h-4 w-4" />
-                    )}
-                  </Button>
-                </CodeBlockGroup>
-                <div className="max-h-[300px] overflow-y-auto bg-white dark:bg-background">
+            <div className="rounded-xl border bg-card shadow-sm overflow-hidden">
+              {/* Header */}
+              <div className="flex items-center justify-between gap-2 px-4 py-2 border-b bg-card">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-green-600/10 text-green-600 dark:bg-green-600/20">
+                    200
+                  </span>
+                  <span className="text-xs text-muted-foreground truncate">
+                    Example Response
+                  </span>
+                </div>
+              </div>
+              
+              {/* Code Content */}
+              <div className="relative group">
+                <div className="overflow-auto max-h-[240px] bg-background">
                   <CodeBlockCode 
                     code={
                       activeTab === "person" 
@@ -377,22 +372,92 @@ export function ApiSection() {
                     }
                     language="json"
                     theme={resolvedTheme === "dark" ? "github-dark" : "github-light"}
-                    className="p-4 text-xs lg:text-sm bg-transparent"
+                    className="text-xs"
                   />
                 </div>
-              </CodeBlock>
+                <span className="absolute top-2 right-3 text-[11px] font-mono text-muted-foreground/60 transition-opacity group-hover:opacity-0 pointer-events-none">
+                  json
+                </span>
+                <button
+                  onClick={handleCopyResponse}
+                  className="absolute top-2 right-2 size-7 p-1.5 opacity-0 group-hover:opacity-100 inline-flex items-center justify-center rounded-md border bg-background shadow-sm hover:bg-accent transition-all"
+                >
+                  {copiedResponse ? (
+                    <Check className="size-3.5 text-green-600" />
+                  ) : (
+                    <Copy className="size-3.5" />
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Security & Compliance Cards */}
+        <div className="pt-16">
+          <div className="mb-8 text-center">
+            <h2 className="mb-4 text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
+              Secure & Compliant Data
+            </h2>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-3 mb-16">
+            {/* SOC 2 Type II */}
+            <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
+              <div className="mb-3 flex items-center gap-3">
+                <Fingerprint className="h-8 w-8 text-foreground/80 transition-colors group-hover:text-primary" />
+                <h3 className="mb-0">SOC 2 Type II</h3>
+              </div>
+              
+              <p className="text-muted-foreground text-sm">
+                We are SOC 2 Type II compliant, validating our security controls and data protection practices.{" "}
+                <a href="#" className="font-medium text-primary hover:underline">
+                  Request our SOC 2
+                </a>
+              </p>
+            </div>
+
+            {/* GDPR */}
+            <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
+              <div className="mb-3 flex items-center gap-3">
+                <Shield className="h-8 w-8 text-foreground/80 transition-colors group-hover:text-primary" />
+                <h3 className="mb-0">GDPR</h3>
+              </div>
+              
+              <p className="text-muted-foreground text-sm">
+                We comply with the EU's General Data Protection Regulation, respecting data privacy rights of European citizens.
+              </p>
+            </div>
+
+            {/* CCPA */}
+            <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
+              <div className="mb-3 flex items-center gap-3">
+                <Building2 className="h-8 w-8 text-foreground/80 transition-colors group-hover:text-primary" />
+                <h3 className="mb-0">CCPA</h3>
+              </div>
+              
+              <p className="text-muted-foreground text-sm">
+                We adhere to the California Consumer Privacy Act, protecting the privacy rights of California residents.
+              </p>
             </div>
           </div>
         </div>
 
         {/* Full API Documentation Iframe */}
-        <div className="pt-16">
+        <div className="pb-0">
           <div className="w-full h-[800px] border border-border rounded-lg overflow-hidden shadow-lg bg-background">
             <iframe
               src="https://docs.b2benrich.com/api/"
               className="w-full h-full"
               title="B2B Enrich API Documentation"
             />
+          </div>
+          <div className="flex justify-center mt-6">
+            <Button asChild size="lg">
+              <a href="https://docs.b2benrich.com/api/" target="_blank" rel="noreferrer">
+                Open Docs in New Window <ArrowRight className="ml-2 size-4" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
