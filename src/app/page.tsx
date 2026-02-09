@@ -4,7 +4,6 @@ import { FAQ } from "@/components/blocks/faq";
 import { FooterPricing } from "@/components/blocks/footer-pricing";
 import { Hero } from "@/components/blocks/hero";
 import { HowCreditsWork } from "@/components/blocks/how-credits-work";
-import { PatternSeparator } from "@/components/blocks/pattern-separator";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
-import Marquee from "react-fast-marquee";
 import { Sparkles } from "lucide-react";
+import Marquee from "react-fast-marquee";
 
 const items = [
   "Partnership Discovery",

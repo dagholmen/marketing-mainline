@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+
 import { IdentityGraph } from './identity-graph';
 
 export function AnimatedIdentityGraph() {

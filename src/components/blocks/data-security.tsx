@@ -1,4 +1,5 @@
 import { Fingerprint, Shield, Building2 } from "lucide-react";
+
 import { AnimatedIdentityGraph } from "./animated-identity-graph";
 
 export function DataSecurity() {

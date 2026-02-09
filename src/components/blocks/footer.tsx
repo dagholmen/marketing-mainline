@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import { ArrowUpRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { Globe } from "@/components/blocks/globe";
+import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (

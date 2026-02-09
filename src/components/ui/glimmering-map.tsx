@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
@@ -21,8 +22,9 @@ export function GlimmeringMap({ className }: { className?: string }) {
         const response = await fetch(svgFile);
         const svgText = await response.text();
         setSvgContent(svgText);
-      } catch (error) {
-        console.error("Failed to load SVG:", error);
+      } catch {
+        // Silently fail if SVG cannot be loaded
+        setSvgContent("");
       }
     };
 

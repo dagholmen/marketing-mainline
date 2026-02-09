@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, Check, Copy, Database, Linkedin, Mail, Search, User } from "lucide-react";
+
+import { Check, Copy, Database, Search, User } from "lucide-react";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
 

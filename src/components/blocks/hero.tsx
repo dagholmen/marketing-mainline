@@ -1,9 +1,9 @@
 import { ArrowRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { GlimmeringMap } from "@/components/ui/glimmering-map";
 import { HeroIllustration } from "@/components/blocks/hero-illustration";
 import { HeroStats } from "@/components/blocks/hero-stats";
+import { Button } from "@/components/ui/button";
+import { GlimmeringMap } from "@/components/ui/glimmering-map";
 
 export const Hero = () => {
   return (

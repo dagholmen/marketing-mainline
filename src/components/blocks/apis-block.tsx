@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ArrowRight, Terminal, Globe, Shield, Zap, Search, Copy, Fingerprint, Building2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CodeBlock, CodeBlockCode, CodeBlockGroup } from "@/components/ui/code-block";
-import { cn } from "@/lib/utils";
+
+import { Check, ArrowRight, Terminal, Globe, Shield, Search, Copy, Fingerprint, Building2 } from "lucide-react";
 import { useTheme } from "next-themes";
+
+import { Button } from "@/components/ui/button";
+import { CodeBlockCode } from "@/components/ui/code-block";
+import { cn } from "@/lib/utils";
 
 const PERSON_ENRICHMENT_CODE = `curl -X POST https://api.b2benrich.com/v1/enrich/cached/person/linkedin-to-person \\
   -H "X-Api-Key: your_api_key_here" \\
