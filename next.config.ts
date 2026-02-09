@@ -6,6 +6,18 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api-docs",
+        destination: "/zudoku-docs/introduction.html",
+      },
+      {
+        source: "/api-docs/:path*",
+        destination: "/zudoku-docs/:path*",
+      },
+    ];
+  },
 };
 const withMDX = createMDX({
   options: {

@@ -1,7 +1,9 @@
 import { ApiSection } from "@/components/blocks/apis-block";
+import { DataSecurity } from "@/components/blocks/data-security";
 import { EnrichmentData } from "@/components/blocks/enrichment-data";
 import { FooterPricing } from "@/components/blocks/footer-pricing";
 import { Hero } from "@/components/blocks/hero";
+import { HowCreditsWork } from "@/components/blocks/how-credits-work";
 import { PatternSeparator } from "@/components/blocks/pattern-separator";
 
 export default function Home() {
@@ -19,7 +21,11 @@ export default function Home() {
         <ApiSection />
       </div>
 
+      <DataSecurity />
+
       <FooterPricing />
+
+      <HowCreditsWork />
     </>
   );
 }

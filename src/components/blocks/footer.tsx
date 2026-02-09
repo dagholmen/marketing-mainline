@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
-    <footer className="bg-secondary-foreground flex flex-col items-center gap-14">
+    <footer className="bg-white dark:bg-black flex flex-col items-center gap-14 pt-20 pb-0">
       <div className="container space-y-3 text-center">
-        <h2 className="text-primary-foreground text-2xl tracking-tight md:text-4xl lg:text-5xl">
+        <h2 className="text-foreground text-2xl tracking-tight md:text-4xl lg:text-5xl">
           Start your free trial today
         </h2>
-        <p className="text-primary-foreground mx-auto max-w-xl leading-snug text-balance">
+        <p className="text-foreground mx-auto max-w-xl leading-snug text-balance">
           Accurate, fast, and reliable B2B data enrichment to enhance your
           business data quality and insights.
         </p>
@@ -28,13 +28,13 @@ export function Footer() {
         </a>
       </Button>
 
-      <div className="mt-10 w-full overflow-hidden md:mt-14 lg:mt-20">
+      <div className="mt-10 w-full overflow-hidden md:mt-14 lg:mt-20 bg-white dark:bg-black">
         <Image
           src="/logo.svg"
           alt="B2B Logo"
           width={700}
           height={200}
-          className="mx-auto w-full max-w-3xl translate-y-1/4 invert dark:invert-0"
+          className="mx-auto w-full max-w-3xl translate-y-1/4 dark:invert"
         />
       </div>
     </footer>

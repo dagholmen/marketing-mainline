@@ -1,0 +1,118 @@
+# Authentication
+All B2BEnrich API endpoints are authenticated using an API key.
+
+## API key authentication
+
+The API uses a simple but secure authentication scheme:
+
+- **Type:** API key
+- **Location:** HTTP header
+- **Header name:** `X-Api-Key`
+
+This authentication scheme is required for every API request.
+
+## Base URL
+
+The API is hosted at:
+
+- Production: `https://api.b2benrich.com`
+
+## Send the API key
+
+Include your API key in the `X-Api-Key` header on every request:
+
+```bash
+curl -X POST https://api.b2benrich.com/v1/enrich/cached/person/linkedin-to-person \
+  -H "X-Api-Key: your_api_key_here" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "input": "https://www.linkedin.com/in/example"
+  }'
+```
+
+For convenience, you can export your API key as an environment variable:
+
+```bash
+export B2BENRICH_API_KEY="your_api_key_here"
+```
+
+Then reference it in your requests:
+
+```bash
+curl -X POST https://api.b2benrich.com/v1/enrich/cached/person/linkedin-to-person \
+  -H "X-Api-Key: $B2BENRICH_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "input": "https://www.linkedin.com/in/example"
+  }'
+```
+
+## Example authenticated requests
+
+All API operations are JSON `POST` requests with a simple `input` field.
+
+### Person enrichment example
+
+Enrich a person profile from their LinkedIn URL:
+
+```bash
+curl -X POST https://api.b2benrich.com/v1/enrich/cached/person/linkedin-to-person \
+  -H "X-Api-Key: $B2BENRICH_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "input": "https://www.linkedin.com/in/johndoe"
+  }'
+```
+
+### Organization enrichment example
+
+Enrich a company from its domain:
+
+```bash
+curl -X POST https://api.b2benrich.com/v1/enrich/cached/org/domain-to-org \
+  -H "X-Api-Key: $B2BENRICH_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "input": "example.com"
+  }'
+```
+
+## Error responses
+
+The API returns standard HTTP status codes to indicate the success or failure of your requests:
+
+| Status Code | Description |
+|------------|-------------|
+| `200` | Successful request |
+| `400` | Bad request - check your input format |
+| `401` | Unauthorized - missing or invalid API key |
+| `402` | Payment required - insufficient credits |
+| `403` | Forbidden - access denied |
+| `404` | Not found - resource doesn't exist |
+| `406` | Not acceptable |
+| `415` | Unsupported media type - use `application/json` |
+| `422` | Validation error - invalid input data |
+| `429` | Too many requests - rate limit exceeded |
+| `500` | Internal server error |
+| `502` | Upstream service error |
+
+### Error response format
+
+All errors follow a consistent JSON structure:
+
+```json
+{
+  "detail": "Error message describing what went wrong",
+  "code": "error",
+  "extra": {}
+}
+```
+
+### Authentication error example
+
+```json
+{
+  "detail": "Unauthorized (missing/invalid X-Api-Key)",
+  "code": "unauthorized"
+}
+```
