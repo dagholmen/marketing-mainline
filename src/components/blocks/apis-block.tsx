@@ -395,7 +395,7 @@ export function ApiSection() {
         </div>
 
         {/* Security & Compliance Cards */}
-        <div className="pt-16">
+        {/* <div className="pt-16">
           <div className="mb-8 text-center">
             <h2 className="mb-4 text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
               Secure & Compliant Data
@@ -404,7 +404,7 @@ export function ApiSection() {
           
           <div className="grid gap-6 md:grid-cols-3 mb-16">
             {/* SOC 2 Type II */}
-            <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
+            {/* <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
               <div className="mb-3 flex items-center gap-3">
                 <Fingerprint className="h-8 w-8 text-foreground/80 transition-colors group-hover:text-primary" />
                 <h3 className="mb-0">SOC 2 Type II</h3>
@@ -416,10 +416,10 @@ export function ApiSection() {
                   Request our SOC 2
                 </a>
               </p>
-            </div>
+            </div> */}
 
             {/* GDPR */}
-            <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
+            {/* <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
               <div className="mb-3 flex items-center gap-3">
                 <Shield className="h-8 w-8 text-foreground/80 transition-colors group-hover:text-primary" />
                 <h3 className="mb-0">GDPR</h3>
@@ -428,10 +428,10 @@ export function ApiSection() {
               <p className="text-muted-foreground text-sm">
                 We comply with the EU's General Data Protection Regulation, respecting data privacy rights of European citizens.
               </p>
-            </div>
+            </div> */}
 
             {/* CCPA */}
-            <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
+            {/* <div className="group flex flex-col rounded-2xl border border-border/50 bg-card/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:bg-card">
               <div className="mb-3 flex items-center gap-3">
                 <Building2 className="h-8 w-8 text-foreground/80 transition-colors group-hover:text-primary" />
                 <h3 className="mb-0">CCPA</h3>
@@ -442,18 +442,28 @@ export function ApiSection() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Full API Documentation Iframe */}
-        <div className="pb-0">
-          <div className="w-full h-[800px] border border-border rounded-lg overflow-hidden shadow-lg bg-background">
+        <div className="pt-10">
+          <div className="w-full h-[533px] border border-border rounded-lg overflow-hidden shadow-lg bg-background relative group">
             <iframe
               src="https://docs.b2benrich.com/api/"
-              className="w-full h-full"
+              className="w-full h-full pointer-events-none transition-all duration-300 group-hover:blur-sm"
               title="B2B Enrich API Documentation"
             />
+            
+            {/* Overlay Button */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/20 backdrop-blur-[2px]">
+              <Button asChild size="lg" className="shadow-lg">
+                <a href="https://docs.b2benrich.com/api/" target="_blank" rel="noreferrer">
+                  Open Docs in New Window <ArrowRight className="ml-2 size-4" />
+                </a>
+              </Button>
+            </div>
           </div>
-          <div className="flex justify-center mt-6">
+          {/* Mobile-only fallback button since hover doesn't work well on touch devices */}
+          <div className="flex justify-center mt-6 lg:hidden">
             <Button asChild size="lg">
               <a href="https://docs.b2benrich.com/api/" target="_blank" rel="noreferrer">
                 Open Docs in New Window <ArrowRight className="ml-2 size-4" />
