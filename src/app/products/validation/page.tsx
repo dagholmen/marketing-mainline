@@ -11,7 +11,8 @@ export default function ValidationPage() {
          badge="VALIDATION API"
          title="Validate Emails and Phones"
          description="Clean your data with real-time validation. Check email deliverability and phone number validity to improve campaign performance and reduce bounce rates."
-         showIllustration={true} 
+         showIllustration={true}
+         illustrationPreset="validation"
       />
       
       <ValidationFeatures />

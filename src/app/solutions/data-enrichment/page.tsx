@@ -12,7 +12,8 @@ export default function DataEnrichmentPage() {
          badge="B2B DATA API"
          title="Data enrichment API for product builders"
          description="Enhance your application data with rich profile information, company insights, and verified contact data. Reliable, high-quality B2B people & company data at scale through a simple RESTful API."
-         showIllustration={true} 
+         showIllustration={true}
+         illustrationPreset="people-enrichment"
       />
       
       <div className="px-0 md:px-8 lg:px-12">

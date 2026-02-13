@@ -11,7 +11,8 @@ export default function CompanyEnrichmentPage() {
          badge="ORGANIZATION API"
          title="Enrich Organization Data"
          description="Enhance company profiles with firmographic data. Turn domains and LinkedIn URLs into comprehensive company insights including revenue, headcount, and tech stack."
-         showIllustration={true} 
+         showIllustration={true}
+         illustrationPreset="company-enrichment"
       />
       
       <CompanyEnrichmentFeatures />

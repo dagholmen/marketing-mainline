@@ -11,7 +11,8 @@ export default function ProspectorPage() {
          badge="PROSPECTOR API"
          title="Advanced B2B Prospecting"
          description="Build highly targeted lead lists with 30+ filters including technology, revenue, and intent signals. Power your lead generation with precision data."
-         showIllustration={true} 
+         showIllustration={true}
+         illustrationPreset="prospector"
       />
       
       <ProspectorFeatures />

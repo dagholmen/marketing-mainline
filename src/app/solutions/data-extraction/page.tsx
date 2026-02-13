@@ -12,7 +12,8 @@ export default function DataExtractionPage() {
          badge="B2B DATA API"
          title="Extract B2B people and company data with our data extraction API"
          description="Build your product features with reliable B2B data extraction. Query 500M+ professional profiles and 50M+ companies through our simple RESTful API. Real-time data, always fresh."
-         showIllustration={true} 
+         showIllustration={true}
+         illustrationPreset="data-extraction"
       />
       
       <div className="px-0 md:px-8 lg:px-12">

@@ -5,6 +5,9 @@ import { HeroStats } from "@/components/blocks/hero-stats";
 import { Button } from "@/components/ui/button";
 import { GlimmeringMap } from "@/components/ui/glimmering-map";
 
+// Import type from hero-illustration
+type IllustrationPreset = "default" | "people-enrichment" | "company-enrichment" | "validation" | "people-search" | "prospector" | "data-extraction";
+
 interface SolutionHeroProps {
   badge: string;
   title: string;
@@ -15,6 +18,7 @@ interface SolutionHeroProps {
   secondaryCtaLink?: string;
   showStats?: boolean;
   showIllustration?: boolean;
+  illustrationPreset?: IllustrationPreset; // New prop
 }
 
 export const SolutionHero = ({
@@ -27,6 +31,7 @@ export const SolutionHero = ({
   secondaryCtaLink = "https://app.b2benrich.com",
   showStats = false,
   showIllustration = true,
+  illustrationPreset = "default", // Default to default
 }: SolutionHeroProps) => {
   return (
     <section className="relative py-16 lg:py-32 lg:pt-28 overflow-hidden">
@@ -72,7 +77,7 @@ export const SolutionHero = ({
       
       {showIllustration && (
         <div className="container mt-0">
-           <HeroIllustration />
+           <HeroIllustration preset={illustrationPreset} />
         </div>
       )}
 

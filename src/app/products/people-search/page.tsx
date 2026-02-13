@@ -11,7 +11,8 @@ export default function PeopleSearchPage() {
          badge="SEARCH API"
          title="Find People at Any Company"
          description="Discover employees and decision-makers with precision search. Filter by company, job title, and role to build targeted lists at scale."
-         showIllustration={true} 
+         showIllustration={true}
+         illustrationPreset="people-search"
       />
       
       <PeopleSearchFeatures />
