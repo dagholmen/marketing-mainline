@@ -36,21 +36,21 @@ export const DiscoveryRelatedProducts = () => {
                     <div className="font-medium mb-1">People Search</div>
                     <div className="text-sm text-muted-foreground mb-3">Sales Navigator compatible search</div>
                   </div>
-                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded w-fit">1 + 0.2/result</div>
+                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded w-fit">5 credits</div>
                 </div>
                 <div className="flex flex-col justify-between p-4 rounded-lg border bg-card/50">
                   <div>
                     <div className="font-medium mb-1">Company Search</div>
                     <div className="text-sm text-muted-foreground mb-3">Sales Navigator compatible search</div>
                   </div>
-                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded w-fit">1 + 0.2/result</div>
+                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded w-fit">5 credits</div>
                 </div>
                 <div className="flex flex-col justify-between p-4 rounded-lg border bg-card/50">
                   <div>
                     <div className="font-medium mb-1">Find Employees</div>
                     <div className="text-sm text-muted-foreground mb-3">List all employees at a company</div>
                   </div>
-                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded w-fit">1 + 0.2/result</div>
+                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded w-fit">5 credits</div>
                 </div>
               </div>
               <Button asChild className="w-full mt-4" variant="outline">

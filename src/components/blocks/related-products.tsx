@@ -43,7 +43,7 @@ export const RelatedProducts = () => {
                     <div className="font-medium">Find People</div>
                     <div className="text-sm text-muted-foreground">Find person by name + company</div>
                   </div>
-                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded">2 credits</div>
+                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded">1 credit</div>
                 </div>
               </div>
               <Button asChild className="w-full mt-4" variant="outline">
@@ -81,7 +81,7 @@ export const RelatedProducts = () => {
                     <div className="font-medium">Find Company</div>
                     <div className="text-sm text-muted-foreground">Find company by name or domain</div>
                   </div>
-                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded">2 credits</div>
+                  <div className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded">1 credit</div>
                 </div>
               </div>
               <Button asChild className="w-full mt-4" variant="outline">

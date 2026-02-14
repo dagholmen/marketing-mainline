@@ -34,6 +34,12 @@ export const PRODUCT_LINKS = [
     icon: <Search className="size-5" />,
   },
   {
+    title: "Company Search",
+    href: "/products/company-search",
+    description: "Find companies by industry, location, and size",
+    icon: <Search className="size-5" />,
+  },
+  {
     title: "Prospector",
     href: "/products/prospector",
     description: "Search across 500M+ profiles with granular filters",

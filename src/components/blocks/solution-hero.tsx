@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { GlimmeringMap } from "@/components/ui/glimmering-map";
 
 // Import type from hero-illustration
-type IllustrationPreset = "default" | "people-enrichment" | "company-enrichment" | "validation" | "people-search" | "prospector" | "data-extraction";
+type IllustrationPreset = "default" | "people-enrichment" | "company-enrichment" | "company-search" | "validation" | "people-search" | "prospector" | "data-extraction";
 
 interface SolutionHeroProps {
   badge: string;

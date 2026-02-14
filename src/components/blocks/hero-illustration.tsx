@@ -120,6 +120,35 @@ const PEOPLE_SEARCH_SAMPLE = {
 }`
 };
 
+const COMPANY_SEARCH_SAMPLE = {
+    id: "company_search",
+    label: "Company Search",
+    icon: Search,
+    method: "POST",
+    endpoint: "/v1/prospector/search",
+    code: `{
+    "filters": {
+        "industry": ["Technology", "SaaS"],
+        "headquarters_location": ["United States"],
+        "employee_count_min": 100
+    },
+    "results": [
+        {
+            "company_name": "Tech Corp",
+            "domain": "techcorp.com",
+            "industry": "Technology",
+            "location": "San Francisco, CA"
+        },
+        {
+            "company_name": "SaaS Inc",
+            "domain": "saasinc.io",
+            "industry": "SaaS",
+            "location": "New York, NY"
+        }
+    ]
+}`
+};
+
 const PROSPECTOR_SAMPLE = {
     id: "prospector",
     label: "Prospector",
@@ -147,6 +176,7 @@ export type IllustrationPreset =
   | "default" 
   | "people-enrichment" 
   | "company-enrichment" 
+  | "company-search"
   | "validation" 
   | "people-search" 
   | "prospector"
@@ -166,6 +196,8 @@ export const HeroIllustration = ({ preset = "default" }: HeroIllustrationProps) 
     samples = [ENRICH_PERSON_SAMPLE, PEOPLE_SEARCH_SAMPLE];
   } else if (preset === "company-enrichment") {
     samples = [ENRICH_COMPANY_SAMPLE, SEARCH_DB_SAMPLE];
+  } else if (preset === "company-search") {
+    samples = [COMPANY_SEARCH_SAMPLE, ENRICH_COMPANY_SAMPLE];
   } else if (preset === "validation") {
     samples = [VALIDATE_EMAIL_SAMPLE];
   } else if (preset === "people-search") {
