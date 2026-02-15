@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Filter, Database, List } from "lucide-react";
+import { Check, Copy, Filter, Database, List, type LucideIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { CodeBlockCode } from "@/components/ui/code-block";
@@ -32,7 +32,7 @@ interface FeatureSectionProps {
   title: string;
   description: string;
   features: string[];
-  icon: React.ElementType;
+  icon: LucideIcon;
   code: string;
   language: string;
   badge: string;

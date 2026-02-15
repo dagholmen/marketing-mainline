@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Globe, Building2 } from "lucide-react";
+import { Check, Copy, Globe, Building2, type LucideIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { CodeBlockCode } from "@/components/ui/code-block";
@@ -27,7 +27,7 @@ interface FeatureSectionProps {
   title: string;
   description: string;
   features: string[];
-  icon: React.ElementType;
+  icon: LucideIcon;
   code: string;
   language: string;
   badge: string;
@@ -152,6 +152,7 @@ export const CompanyEnrichmentFeatures = () => {
         language="bash"
         link="https://docs.b2benrich.com/api/organization#linkedin-url-to-organization-1-credit-per-request"
         linkText="View Documentation"
+        align="left"
       />
 
       <FeatureSection 
